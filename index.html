@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUN-API-PRACTICE</title>
+</head>
+<body>
+     <h1 id="randomTask"></h1>
+     <h3>learn From Here : <a id="link_randomly" href="Visit-Here">Visit-Here</a></h3>
+    <script>
+        function doSomething() {
+            fetch('https://www.boredapi.com/api/activity/')
+            .then(data =>data.json())
+            .then(res =>{
+                
+                document.getElementById("randomTask").innerText=res.activity;
+            })
+        }
+        doSomething();
+        setInterval(() => {
+            doSomething();
+        }, 10000);
+    </script>
+</body>
+</html>
